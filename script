@@ -18,5 +18,27 @@ ProgressSection:AddButton({ --AddButton, AddToggle, AddDropdown etc
     Callback = function(x)
         local cache = {}
 
-Script Here        
+      local player = game:GetService("Players").LocalPlayer.Character.PrimaryPart
+local oldcframe = player.CFrame
+getgenv().autofarmer = true
+while wait() do
+	if getgenv().autofarmer == true then
+		while wait() do
+			for i,v in pairs(workspace:GetChildren()) do
+				if v.ClassName == "Part" and v.Name == "Rain2" then
+					v.CFrame = player.CFrame
+                else
+                    if v.ClassName == "Part" and v.Name == "Rain3" then
+                        v.CFrame = player.CFrame
+                    else
+                        if v.ClassName == "Part" and v.Name == "Rain" then
+                            v.CFrame = player.CFrame
+                        end
+                    end
+				end
+			end
+		end
+	end
+	wait()
+end
 })
